@@ -1,0 +1,5 @@
+https://www.npmjs.com/package/cordova-plugin-device
+https://www.npmjs.com/package/cordova-plugin-inappbrowser
+https://www.npmjs.com/package/cordova-plugin-vibration
+https://www.npmjs.com/package/cordova-plugin-statusbar
+https://www.npmjs.com/package/cordova-plugin-buildinfo

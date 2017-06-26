@@ -1,0 +1,62 @@
+History of changes
+==================
+1.3.5
+- Fixed the URL to easy-Speak, which now requires to use https
+- Increased font size in Quick Timer
+
+1.3.2
+- Change reference from Phonegap to Cordova of Statusbar plugin
+
+1.3.1
+- Add automatic Timerkeeper Cards option to timer
+- Add manual Timekeeper Cards to main menu
+
+1.3.0
+- Added Quick Timer
+- Removed a bunch of unnecessary images
+
+1.2.9
+- Bug fixed and stability improvements
+
+1.2.8
+- Add setting to select your easy-Speak server
+    Europe (excl. UK and Ireland) -> tmclub.eu
+    UK and Ireland -> Toastmasterclub.org
+    Outside Europe -> easy-Speak.org
+    Don't use easy-Speak -> No server
+
+1.2.7
+- Changed label of the button to go to easy-Speak
+
+1.2.6
+- Optionally keep device awake when agenda is active
+- Row height for the agenda can now be changed in the settings
+- Added option to remove timer buttons from agenda. Instead tapping anywhere on the row takes you to the timer.
+
+1.2.5
+- Rearranged main menu and made it responsive
+- Added bar chart to Timer Report
+
+1.2.4
+- Bugfix where device was not able to go to sleep when setting was changed during running timer
+- Bugfix where Back button was incorrectly disabled in some cases
+
+
+1.2.2
+- Bugfix where Back button was incorrectly disabled in some cases
+- Added direct access to the Settings from the timer screen
+
+1.2.1
+- Setting added that allows you to prevent the device from going to sleep while the timer is running
+
+1.2.0
+- Setting added that allows you to let your phone vibrate when a timer limit has been reached
+- Easyspeak agenda detail page can now directly be accessed from the app
+
+1.1.12
+- Lines in the agenda now have alternating background colors to improve readability
+- Timer now shows limits in on the Settings line
+- Timer Report can now directly be accessed from the Timer screen
+
+1.1.4
+- A summary and filter has been added to the Timer Report.

@@ -1,0 +1,481 @@
+{
+	"agenda": {
+		"header": {
+			"clubname": "Toastmasters Antwerpen",
+			"clubawards": "Distinguished Club - 2016",
+			"district": "59",
+			"division": "B",
+			"area": "4",
+			"clubnumber": "1225462",
+			"date": "2016-09-08",
+			"starttime": "20:00",
+			"theme": "TBA",
+			"wordoftheday": "worm",
+			"venue": "De Finale",
+			"nextmeetingdate": "2016-08-25",
+			"nextmeetingtime": "20:00",
+			"nextmeetingvenue": "Bar 4, Mortsel"
+		},
+		"agendadetail": [{
+			"time": "20:05",
+			"role": "Presiding Officer",
+			"presenter": "Sandra D'amario",
+			"event": "Opens the meeting",
+			"durationgreen": "",
+			"durationamber": "",
+			"durationred": "3:00",
+			"projectheader": "",
+			"projectdescription": ""
+		}, {
+			"time": "20:08",
+			"role": "Toastmaster",
+			"presenter": "Gaston Thomissen",
+			"event": "Toastmaster's welcome",
+			"durationgreen": "",
+			"durationamber": "",
+			"durationred": "",
+			"projectheader": "",
+			"projectdescription": ""
+		}, {
+			"time": "20:13",
+			"role": "General Evaluator",
+			"presenter": "Egwin Gonthier",
+			"event": "Introduces assistants",
+			"durationgreen": "",
+			"durationamber": "",
+			"durationred": "",
+			"projectheader": "",
+			"projectdescription": ""
+		}, {
+			"time": "20:15",
+			"role": "Timekeeper",
+			"presenter": "Lode Vermeiren",
+			"event": "",
+			"durationgreen": "",
+			"durationamber": "",
+			"durationred": "",
+			"projectheader": "",
+			"projectdescription": ""
+		}, {
+			"time": "20:16",
+			"role": "Ah Counter",
+			"presenter": "Jens Van Steerteghem",
+			"event": "",
+			"durationgreen": "",
+			"durationamber": "",
+			"durationred": "",
+			"projectheader": "",
+			"projectdescription": ""
+		}, {
+			"time": "20:17",
+			"role": "Grammarian",
+			"presenter": "Davy Breels",
+			"event": "",
+			"durationgreen": "",
+			"durationamber": "",
+			"durationred": "",
+			"projectheader": "",
+			"projectdescription": ""
+		}, {
+			"time": "20:19",
+			"role": "Toastmaster",
+			"presenter": "Gaston Thomissen",
+			"event": "Introduces speakers session & 1st speaker",
+			"durationgreen": "",
+			"durationamber": "",
+			"durationred": "",
+			"projectheader": "",
+			"projectdescription": ""
+		}, {
+			"time": "20:20",
+			"role": "1st Speaker",
+			"presenter": "Walter Van Noten",
+			"event": "My ice breaker",
+			"durationgreen": "4:00",
+			"durationamber": "5:00",
+			"durationred": "6:00",
+			"projectheader": "Competent Communication Manual - 1 - The Ice Breaker",
+			"projectdescription": "Speak before an audience; Use existing speaking skills; Introduce self to fellow club members."
+		}, {
+			"time": "20:26",
+			"role": "Toastmaster",
+			"presenter": "Gaston Thomissen",
+			"event": "1 minute of silence for evaluation",
+			"durationgreen": "",
+			"durationamber": "",
+			"durationred": "",
+			"projectheader": "",
+			"projectdescription": ""
+		}, {
+			"time": "20:27",
+			"role": "2nd Speaker",
+			"presenter": "Mikhail Nikonorov",
+			"event": "My life is full of changes",
+			"durationgreen": "4:00",
+			"durationamber": "5:00",
+			"durationred": "6:00",
+			"projectheader": "Competent Communication Manual - 1 - The Ice Breaker",
+			"projectdescription": "Speak before an audience; Use existing speaking skills; Introduce self to fellow club members."
+		}, {
+			"time": "20:33",
+			"role": "Toastmaster",
+			"presenter": "Gaston Thomissen",
+			"event": "1 minute of silence for evaluation",
+			"durationgreen": "",
+			"durationamber": "",
+			"durationred": "",
+			"projectheader": "",
+			"projectdescription": ""
+		}, {
+			"time": "20:34",
+			"role": "3rd Speaker",
+			"presenter": "Lucia Adamickova",
+			"event": "TBA",
+			"durationgreen": "4:00",
+			"durationamber": "5:00",
+			"durationred": "6:00",
+			"projectheader": "Competent Communication Manual - 1 - The Ice Breaker",
+			"projectdescription": "Speak before an audience; Use existing speaking skills; Introduce self to fellow club members."
+		}, {
+			"time": "20:40",
+			"role": "Toastmaster",
+			"presenter": "Gaston Thomissen",
+			"event": "1 minute of silence for evaluation",
+			"durationgreen": "",
+			"durationamber": "",
+			"durationred": "",
+			"projectheader": "",
+			"projectdescription": ""
+		}, {
+			"time": "20:41",
+			"role": "4th Speaker",
+			"presenter": "Pieter-Jan Remaut",
+			"event": "The Talos Principle",
+			"durationgreen": "5:00",
+			"durationamber": "6:00",
+			"durationred": "7:00",
+			"projectheader": "Competent Communication Manual - 2 - Organise Your Speech",
+			"projectdescription": "Strong opening and conclusion; Outline that can be followed and understood; Clear message with supporting material; Appropriate transitions."
+		}, {
+			"time": "20:48",
+			"role": "Toastmaster",
+			"presenter": "Gaston Thomissen",
+			"event": "1 minute of silence for evaluation",
+			"durationgreen": "",
+			"durationamber": "",
+			"durationred": "",
+			"projectheader": "",
+			"projectdescription": ""
+		}, {
+			"time": "20:49",
+			"role": "N.B.",
+			"presenter": "Break",
+			"event": "",
+			"durationgreen": "",
+			"durationamber": "",
+			"durationred": "",
+			"projectheader": "",
+			"projectdescription": ""
+		}, {
+			"time": "20:59",
+			"role": "Toastmaster",
+			"presenter": "Gaston Thomissen",
+			"event": "Proceeds with meeting",
+			"durationgreen": "",
+			"durationamber": "",
+			"durationred": "",
+			"projectheader": "",
+			"projectdescription": ""
+		}, {
+			"time": "21:00",
+			"role": "Toastmaster",
+			"presenter": "Gaston Thomissen",
+			"event": "Introduces Table Topic Master",
+			"durationgreen": "",
+			"durationamber": "",
+			"durationred": "",
+			"projectheader": "",
+			"projectdescription": ""
+		}, {
+			"time": "21:01",
+			"role": "Table Topic Master",
+			"presenter": "Stef Kuypers",
+			"event": "",
+			"durationgreen": "2:00",
+			"durationamber": "2:30",
+			"durationred": "3:00",
+			"projectheader": "",
+			"projectdescription": ""
+		}, {
+			"time": "21:04",
+			"role": "1st Table Topic Volunteer",
+			"presenter": "",
+			"event": "",
+			"durationgreen": "1:00",
+			"durationamber": "1:30",
+			"durationred": "2:00",
+			"projectheader": "",
+			"projectdescription": ""
+		}, {
+			"time": "21:06",
+			"role": "2nd Table Topic Volunteer",
+			"presenter": "",
+			"event": "",
+			"durationgreen": "1:00",
+			"durationamber": "1:30",
+			"durationred": "2:00",
+			"projectheader": "",
+			"projectdescription": ""
+		}, {
+			"time": "21:08",
+			"role": "3rd Table Topic Volunteer",
+			"presenter": "",
+			"event": "",
+			"durationgreen": "1:00",
+			"durationamber": "1:30",
+			"durationred": "2:00",
+			"projectheader": "",
+			"projectdescription": ""
+		}, {
+			"time": "21:10",
+			"role": "4th Table Topic Volunteer",
+			"presenter": "",
+			"event": "",
+			"durationgreen": "1:00",
+			"durationamber": "1:30",
+			"durationred": "2:00",
+			"projectheader": "",
+			"projectdescription": ""
+		}, {
+			"time": "21:12",
+			"role": "5th Table Topic Volunteer",
+			"presenter": "",
+			"event": "",
+			"durationgreen": "1:00",
+			"durationamber": "1:30",
+			"durationred": "2:00",
+			"projectheader": "",
+			"projectdescription": ""
+		}, {
+			"time": "21:14",
+			"role": "Toastmaster",
+			"presenter": "Gaston Thomissen",
+			"event": "Calls the Evaluators",
+			"durationgreen": "",
+			"durationamber": "",
+			"durationred": "",
+			"projectheader": "",
+			"projectdescription": ""
+		}, {
+			"time": "21:15",
+			"role": "Table Topics Evaluator",
+			"presenter": "Andries Reymer",
+			"event": "",
+			"durationgreen": "3:00",
+			"durationamber": "3:30",
+			"durationred": "4:00",
+			"projectheader": "",
+			"projectdescription": ""
+		}, {
+			"time": "21:19",
+			"role": "1st Evaluator",
+			"presenter": "Tim Cools",
+			"event": "",
+			"durationgreen": "2:00",
+			"durationamber": "2:30",
+			"durationred": "3:00",
+			"projectheader": "",
+			"projectdescription": ""
+		}, {
+			"time": "21:22",
+			"role": "2nd Evaluator",
+			"presenter": "Sigal Rabinovitz",
+			"event": "",
+			"durationgreen": "2:00",
+			"durationamber": "2:30",
+			"durationred": "3:00",
+			"projectheader": "",
+			"projectdescription": ""
+		}, {
+			"time": "21:25",
+			"role": "3rd Evaluator",
+			"presenter": "Sandra D'Amario",
+			"event": "",
+			"durationgreen": "2:00",
+			"durationamber": "2:30",
+			"durationred": "3:00",
+			"projectheader": "",
+			"projectdescription": ""
+		}, {
+			"time": "21:28",
+			"role": "4th Evaluator",
+			"presenter": "Els Van Hees",
+			"event": "",
+			"durationgreen": "2:00",
+			"durationamber": "2:30",
+			"durationred": "3:00",
+			"projectheader": "",
+			"projectdescription": ""
+		}, {
+			"time": "21:31",
+			"role": "General Evaluator",
+			"presenter": "Egwin Gonthier",
+			"event": "Calls assistants",
+			"durationgreen": "",
+			"durationamber": "",
+			"durationred": "",
+			"projectheader": "",
+			"projectdescription": ""
+		}, {
+			"time": "21:32",
+			"role": "Grammarian",
+			"presenter": "Davy Breels",
+			"event": "Grammarian's report",
+			"durationgreen": "2:00",
+			"durationamber": "2:30",
+			"durationred": "3:00",
+			"projectheader": "",
+			"projectdescription": ""
+		}, {
+			"time": "21:35",
+			"role": "Ah Counter",
+			"presenter": "Jens Van Steerteghem",
+			"event": "",
+			"durationgreen": "1:00",
+			"durationamber": "1:30",
+			"durationred": "2:00",
+			"projectheader": "",
+			"projectdescription": ""
+		}, {
+			"time": "21:37",
+			"role": "Timekeeper",
+			"presenter": "Lode Vermeiren",
+			"event": "",
+			"durationgreen": "1:00",
+			"durationamber": "1:30",
+			"durationred": "2:00",
+			"projectheader": "",
+			"projectdescription": ""
+		}, {
+			"time": "21:39",
+			"role": "General Evaluator",
+			"presenter": "Egwin Gonthier",
+			"event": "Final Report",
+			"durationgreen": "8:00",
+			"durationamber": "8:00",
+			"durationred": "8:00",
+			"projectheader": "",
+			"projectdescription": ""
+		}, {
+			"time": "21:47",
+			"role": "Club Business",
+			"presenter": "Sandra D'Amario",
+			"event": "Announcements and closing round",
+			"durationgreen": "",
+			"durationamber": "",
+			"durationred": "",
+			"projectheader": "",
+			"projectdescription": ""
+		}, {
+			"time": "21:52",
+			"role": "End of Meeting",
+			"presenter": "",
+			"event": "",
+			"durationgreen": "",
+			"durationamber": "",
+			"durationred": "",
+			"projectheader": "",
+			"projectdescription": ""
+		}],
+		"attendance": {
+			"Members": [{
+				"name": "Lucia Adamickova"
+			}, {
+				"name": "Davy Breels"
+			}, {
+				"name": "Tim Cools"
+			}, {
+				"name": "Sandra D'Amario"
+			}, {
+				"name": "Wouter Duckaert"
+			}, {
+				"name": "Wouter Dupré"
+			}, {
+				"name": "Egwin Gonthier"
+			}, {
+				"name": "Stef Kuypers"
+			}, {
+				"name": "Gabriel Mattys"
+			}, {
+				"name": "Christine Michielsen"
+			}, {
+				"name": "Mikhail Nikonorov"
+			}, {
+				"name": "Sigal Rabinovitz"
+			}, {
+				"name": "Pieter-Jan Remaut"
+			}, {
+				"name": "Andries Reymer"
+			}, {
+				"name": "Gaston Thomissen"
+			}, {
+				"name": "Els Van Hees"
+			}, {
+				"name": "Walter Van Noten"
+			}, {
+				"name": "Jens Van Steerteghem"
+			}, {
+				"name": "Lode Vermeiren"
+			}],
+			"Guests": [{
+				"name": "Erika Buenrostro"
+			}, {
+				"name": "Dorothea Tearr"
+			}, {
+				"name": "Charissa Tse"
+			}],
+			"tmotherclub": [{
+				"name": "Joanna Spychala"
+			}, {
+				"name": "Kirsten Ujvari"
+			}],
+			"apologized": [{
+				"name": "Arlene Birt"
+			}, {
+				"name": "Maarten Bovee"
+			}, {
+				"name": "Karin Bral"
+			}, {
+				"name": "Kris Caluwaerts"
+			}, {
+				"name": "Levi Claes"
+			}, {
+				"name": "Peter Clancy"
+			}, {
+				"name": "Edouard Cogne"
+			}, {
+				"name": "Yannick Cuvelie"
+			}, {
+				"name": "Koen De Maere"
+			}, {
+				"name": "Cathelijne De Vries"
+			}, {
+				"name": "Chloé Dyckmans"
+			}, {
+				"name": "Lee Hahmann"
+			}, {
+				"name": "Irina Hauser"
+			}, {
+				"name": "Haya Hochwald"
+			}, {
+				"name": "Tim Huybrechts"
+			}, {
+				"name": "Peter Laureyssens"
+			}, {
+				"name": "Jo Lernout"
+			}, {
+				"name": "Erik Luijts"
+			}]
+		}
+	}
+}

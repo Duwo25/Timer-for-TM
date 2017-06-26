@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+    xmlns:gap   = "http://phonegap.com/ns/1.0"
+    id          = "com.w15e.tmameetingapp"
+    versionCode = "44"
+    version     = "1.3.5" >
+
+<!-- versionCode is optional and Android only -->
+
+  <name>Timer for TM</name>
+
+  <description>
+      This is a Timer app for Toastmasters. It allows you to see if you're on track during your meeting. It's also a tool for the Timekeeper. The timer feeds from the agenda and you can build a report with the recorded times.
+  </description>
+
+  <author href="https://toastmastersantwerpen.be" email="wouter.dupre@gmail.com">
+      Wouter Dupré
+  </author>
+  
+  <platform name="android">
+    <icon src="images/android-icon-36x36.png"   qualifier="ldpi" />
+    <icon src="images/android-icon-48x48.png"   qualifier="mdpi" />
+    <icon src="images/android-icon-72x72.png"   qualifier="hdpi" />
+    <icon src="images/android-icon-96x96.png"   qualifier="xhdpi" />
+    <icon src="images/android-icon-144x144.png" qualifier="xxhdpi" />
+    <icon src="images/android-icon-192x192.png" qualifier="fr-xxhdpi" />
+  </platform>
+  
+  <platform name="ios">
+    <icon src="images/apple-icon-57x57.png"   width="57"  height="57"  />
+    <icon src="images/apple-icon-60x60.png"   width="60"  height="60"  />
+    <icon src="images/apple-icon-72x72.png"   width="72"  height="72"  />
+    <icon src="images/apple-icon-76x76.png"   width="76"  height="76"  />
+    <icon src="images/apple-icon-114x114.png" width="114" height="114" />
+    <icon src="images/apple-icon-120x120.png" width="120" height="120" />
+    <icon src="images/apple-icon-144x144.png" width="144" height="144" />
+    <icon src="images/apple-icon-152x152.png" width="152" height="152" />
+    <icon src="images/apple-icon-180x180.png" width="180" height="180" />
+    <icon src="images/apple-icon.png"         width="192" height="192" />
+    <!-- iPhone SE -->
+    <splash src="images/apple-splash-640x1136.png" width="640" height="1136" />
+    <splash src="images/apple-splash-1136x640.png" width="1136" height="640" />
+    <!-- iPhone 6s, iPhone 6 -->
+    <splash src="images/apple-splash-750x1334.png" width="750" height="1334" />
+    <splash src="images/apple-splash-1334x750.png" width="1334" height="750" />
+    <!-- iPhone 6s Plus, iPhone 6 Plus -->
+    <splash src="images/apple-splash-1080x1920.png" width="1080" height="1920" />
+    <splash src="images/apple-splash-1920x1080.png" width="1920" height="1080" />
+    <!-- 9.7-inch iPad Pro, iPad Air 2, iPad mini 4, iPad mini 2 -->
+    <splash src="images/apple-splash-1536x2048.png" width="1536" height="2048" />
+    <splash src="images/apple-splash-2048x1536.png" width="2048" height="1536" />
+    <!-- 12.9-inch iPad Pro -->
+    <splash src="images/apple-splash-2048x2737.png" width="2048" height="2737" />
+    <splash src="images/apple-splash-2737x2048.png" width="2737" height="2048" />
+  </platform>
+  
+  <preference name="phonegap-version" value="cli-6.5.0" />
+  <!-- to avoid the app overlapping the statusbar at the top of the screen -->
+  <preference name="StatusBarOverlaysWebView" value="false" />
+  <preference name="StatusBarBackgroundColor" value="#000000" />
+  <preference name="StatusBarStyle" value="lightcontent" />
+  <!-- Don't let the interface display any feedback when the user scrolls past the beginning or the end of content (iOS, Android) -->
+  <preference name="DisallowOverscroll" value="true"/>
+  <!-- Hide the additional toolbar that appears above the keyboard, helping users navigate from one form input to another (iOS) -->
+  <preference name="HideKeyboardFormAccessoryBar" value="true"/>
+  <!--
+  <gap:plugin name="com.phonegap.plugin.statusbar" />
+  <plugin name="org.apache.cordova.statusbar" source="pgb" spec="2.1.3" />
+  <plugin name="org.apache.cordova.inappbrowser" source="pgb" spec="1.4.0" />
+  <plugin name="org.apache.cordova.device" source="pgb" spec="1.1.2" />
+  <plugin name="org.apache.cordova.vibration" source="pgb" spec="2.1.1" />
+  <plugin name="org.apache.cordova.buildinfo" source="pgb" spec="1.1.0" />
+  -->
+  <!--
+  <plugin name="com.phonegap.plugin.statusbar" source="pgb" />
+  -->
+  <plugin name="org.apache.cordova.statusbar" source="npm" spec="2.1.3" />
+  <plugin name="org.apache.cordova.inappbrowser" source="npm" spec="1.5.0"/>
+  <!-- not needed (yet)
+  <plugin name="org.apache.cordova.device" source="npm" />
+  -->
+  <plugin name="org.apache.cordova.vibration" source="npm" spec="2.1.2"/>
+  <!-- plugin can't be found for some strange reason
+  <plugin name="org.apache.cordova.buildinfo" source="npm" />
+  -->
+  <!-- plugin to keep device from falling asleep, used when timer is running -->
+  <plugin name="cordova-plugin-insomnia" source="npm" spec="4.1.0"/>
+  
+  <allow-navigation href="http://tmclub.eu/*" />
+  <allow-navigation href="https://tmclub.eu/*" />
+  <allow-intent href="http://tmclub.eu/*" />
+  <allow-intent href="https://tmclub.eu/*" />
+  <!--
+  
+  <feature name="Notification">
+    <param name="android-package" value="org.apache.cordova.Notification" />
+  </feature>
+  <feature name="InAppBrowser">
+    <param name="ios-package" value="CDVInAppBrowser" />
+  </feature>
+  <feature name="InAppBrowser">
+    <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+  </feature>
+  -->
+  <!--
+  <feature name="Insomnia">
+    <param name="ios-package"     value="Insomnia" />
+    <param name="android-package" value="nl.xservices.plugins.Insomnia" />
+    <param name="wp-package" value="Insomnia" />
+  </feature>
+  -->
+</widget>

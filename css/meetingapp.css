@@ -1,0 +1,161 @@
+/*
+File .....: meetingapp.css
+
+Author ...: Wouter Dupré
+Created ..: 2016-07-15
+Modified .: 2016-09-29
+*/
+
+/* to avoid page-transition issues in Phonegap apps */
+.ui-page { 
+    -webkit-backface-visibility: hidden; 
+}
+
+img {
+    margin-right: 10px; }
+.hidden { 
+    display: none; 
+}
+.timercolor-red {
+    color: red;
+}
+.timercolor-amber {
+    color: orange;
+}
+.timercolor-green {
+    color: lightgreen;
+}
+.timercolor-grey {
+    color: lightgrey;
+}
+.row-button {
+    margin-top: 0px !important; 
+    margin-bottom: 0px !important;
+}
+.button-cell {
+    padding: .0em !important;
+}
+.past-time {
+    font-weight: bold;
+/*
+    font-style: italic;
+*/
+    color: orange; 
+}
+#page-agenda tbody tr:nth-child(odd) {
+    background: DimGrey;
+}
+
+#page-agenda tbody tr td {
+    vertical-align: middle;
+}
+
+/* Hide the input field from slider widgets */
+/*
+.ui-slider-input {
+    display : none !important;
+}
+*/
+#page-quick-timer #quick-timer {
+    text-align: center;
+}
+#page-quick-timer .qtbutton {
+    font-size: 1em;   
+}
+#page-timer #SettingGreen {
+    background: green;
+    color: white;
+}
+#page-timer #SettingAmber {
+    background: darkorange;
+    color: white;
+}
+#page-timer #SettingRed {
+    background: red;
+    color: white;
+}
+
+#page-timer-report #BarEarly {
+    background: DimGrey;
+    color: white;
+}
+
+#page-timer-report #BarGreen {
+    background: green;
+    color: white;
+}
+
+#page-timer-report #BarAmber {
+    background: Gold;
+    color: white;
+}
+
+#page-timer-report #BarRed {
+    background: red;
+    color: white;
+}
+
+.STOP {
+	font-weight: bold;
+	font-size: 1em;
+	color: #ffffff;
+	text-align: justify;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+@media only screen and (min-width: 100px) {
+	.STOP { font-size: 2em;}
+}
+
+@media only screen and (min-width: 180px) {
+	.STOP { font-size: 4em;}
+}
+
+@media only screen and (min-width: 360px) {
+	.STOP { font-size: 7em;}
+}
+
+@media only screen and (min-width: 412px) {
+	.STOP { font-size: 8em;}
+}
+
+@media only screen and (min-width: 568px) {
+	.STOP { font-size: 11em;}
+}
+
+@media only screen and (min-width: 640px) {
+	.STOP { font-size: 13em;}
+}
+
+@media only screen and (min-width: 732px) {
+	.STOP { font-size: 14em;}
+}
+
+@media only screen and (min-width: 768px) {
+	.STOP { font-size: 15em;}
+}
+
+@media only screen and (min-width: 1024px) {
+	.STOP { font-size: 20em;}
+}
+
+@media only screen and (min-width: 1152px) {
+	.STOP { font-size: 25em;}
+}
+
+@media only screen and (min-width: 1280px) {
+	.STOP { font-size: 30em;}
+}
+
+@media only screen and (min-width: 1680px) {
+	.STOP { font-size: 35em;}
+}
+
+@media only screen and (min-width: 2048px) {
+	.STOP { font-size: 48em;}
+}
+
+

@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<!--
+File .....: index.html
+
+Author ...: Wouter Dupré
+Created ..: 2016-07-15
+Modified .: 2016-09-29
+-->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <!--
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css" />
+        <link rel="stylesheet" href="css/meetingapp.css" />
+        <!--
+        <link rel="stylesheet" href="css/meetingapp.min.css" />
+        -->
+        <link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="images/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="images/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="images/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+        <link rel="manifest" href="manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">        
+        <script type="text/javascript" charset="utf-8" src="jquery/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="jquery/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/meetingapp.js"></script>
+<!--
+        <script src="js/meetingapp.min.js"></script>
+-->
+        <title>Toastmasters' Meeting Timer</title>
+    </head>
+    <body>
+        <!-- Page template: copy/paste from here to create a new page -->
+<!--
+        <div data-role="page" data-theme="b" id="##### Insert page-id here #####">
+            <div data-role="header" data-position="fixed" data-add-back-btn="true">
+                <h1>##### Insert page title here #####</h1>
+            </div>
+            <div data-role="main" class="ui-content">
+                <div>insert your content here</div>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h1>&copy; 2016 Toastmasters Antwerpen</h1>
+            </div>
+        </div>
+-->
+
+        <!-- Home page -->
+        <div data-role="page" data-theme="b" id="page-home">
+            <div data-role="header" data-position="fixed" data-add-back-btn="true">
+                <h1>Meeting Timer</h1>
+            </div>
+            <div data-role="main" class="ui-content">
+                <div class="ui-grid-a ui-responsive">
+                    <div class="ui-block-a">
+                        <a href="#page-agenda" class="ui-btn ui-btn-corner-all ui-icon-calendar ui-btn-icon-top ui-shadow" data-transition="slide">Agenda</a>
+<!--
+                        <a href="#page-meeting-report" class="ui-btn ui-btn-corner-all ui-icon-bullets ui-btn-icon-top ui-shadow ui-state-disabled" data-transition="slide">Meeting Report</a>
+-->
+                        <a href="#page-timer" class="ui-btn ui-btn-corner-all ui-icon-clock ui-btn-icon-top ui-shadow" data-transition="slide">Timer</a>
+                        <a href="#page-quick-timer" class="ui-btn ui-btn-corner-all ui-icon-clock ui-btn-icon-top ui-shadow" data-transition="slide">Quick Timer</a>
+                    </div>
+                    <div class="ui-block-b">
+                        <a href="#page-timer-report" class="ui-btn ui-btn-corner-all ui-icon-bullets ui-btn-icon-top ui-shadow" data-transition="slide">Timer Report</a>
+                        <a href="#page-card-green" class="ui-btn ui-btn-corner-all ui-icon-tag ui-btn-icon-top ui-shadow" data-transition="slide">Timekeeper Cards</a>
+                        <a href="#page-settings" class="ui-btn ui-btn-corner-all ui-icon-gear ui-btn-icon-top ui-shadow" data-transition="slide">Settings</a>
+                    </div>
+                </div>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h1>&copy; 2016 Toastmasters Antwerpen</h1>
+            </div>
+        </div>
+
+        <!-- Agenda page -->
+        <div data-role="page" data-theme="b" id="page-agenda">
+            <div data-role="header" data-position="fixed" data-add-back-btn="true">
+                <h1>Agenda</h1>
+                <a href="#page-import-agenda" id="agendaButtonPageImport" class="ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-arrow-d" data-role="button" data-transition="slide">Import</a>
+            </div>
+            <div data-role="main" class="ui-content">
+<!--
+                <div>
+                    <a href="#" id="agendaButtonRefresh" class="ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-refresh" onclick="buttonClick('refreshagenda')">Refresh</a>
+                </div>
+-->
+                <div>
+                    <table data-role="table" data-mode="columntoggle" class="ui-responsive" id="AgendaTable">
+<!--                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Timer</th>
+                                <th>Role</th>
+                                <th data-priority="2">Presenter</th>
+                                <th data-priority="1">Event</th>
+                                <th data-priority="6">Green</th>
+                                <th data-priority="6">Amber</th>
+                                <th data-priority="6">Red</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+-->
+                    </table>
+                </div>
+            </div>
+            <!--
+            <div data-role="footer" data-position="fixed">
+                <h1>&copy; 2016 Toastmasters Antwerpen</h1>
+            </div>
+            -->
+        </div>
+
+        <!-- Import page -->
+        <div data-role="page" data-theme="b" id="page-import-agenda">
+            <div id="page-import-agenda-header" data-role="header" data-position="fixed" data-add-back-btn="true">
+                <h1>Import Agenda</h1>
+<!--                
+                <a href="#" id="importButtonSave" data-role="button" class="ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-check" onclick="buttonClick('toastmastersAgendaSave')">Save</a>
+                <a href="#" id="myButton"         class="ui-btn ui-btn-inline ui-mini ui-btn-corner-all ui-btn-right ui-btn-icon-right ui-icon-star" data-role="button" onclick="doSomething('resr')">My button</a>
+-->
+                <a href="#" id="importButtonSave" class="ui-btn ui-btn-inline ui-mini ui-btn-corner-all ui-btn-right ui-btn-icon-left ui-icon-check" data-role="button" onclick="buttonClick('toastmastersAgendaSave')">Save</a>
+<!--
+                <script type="text/javascript">
+                    $("#importButtonSave").on('click', function(){ 
+                    alert('Clicked Start');
+//                    buttonClick('toastmastersAgendaSave');
+                    alert('Clicked End');
+                    });
+                </script>
+-->
+            </div>
+            <div data-role="main" class="ui-content">
+                <div id="importAgendaPopupAnchor"></div>
+                <h3>Instructions:</h3>
+                <ol>
+                    <li>Go to <strong>easy-Speak</strong> and look up the <strong>meeting</strong> you want to import<br/>(The button below will try to take you there directly)</li>
+                    <li>If needed, click on the <strong>Details</strong> button to go to the detailed agenda page</li>
+                    <li><strong>Select the whole page</strong> and <strong>copy</strong> it to the clipboard</li>
+                    <li>Return here and <strong>paste</strong> the agenda in the <strong>text area below</strong></li>
+                    <li>Click &quot;<strong>Save</strong>&quot;</li>
+                </ol>
+                <a href="#" id="gotoEasyspeakAgendaDetail" class="ui-btn ui-btn-inline ui-btn-corner-all ui-btn-icon-left ui-icon-navigation" data-role="button" onclick="gotoEasyspeakAgendaDetail()">easy-Speak</a>
+                <label for="agendaContent" class="ui-hidden-accessible">Content:</label>
+                <textarea name="agendaContent" id="agendaContent" data-theme="a" placeholder="Paste the content from the agenda details here..."></textarea>
+            </div>
+            <!--
+            <div data-role="footer" data-position="fixed">
+                <h1>&copy; 2016 Toastmasters Antwerpen</h1>
+            </div>
+            -->
+
+            <div id="popup-import-agenda-complete" data-role="popup" data-position-to="#importAgendaPopupAnchor" data-transition="pop" data-theme="a">
+                <p>Import complete. <span id="NumAgendaLinesImported"></span></p>
+            </div>
+            <div id="popup-import-without-data" data-role="popup" data-transition="pop" data-theme="a" data-dismissible="false">
+                <form>
+                    <div style="padding:10px 20px;">
+                        <div>
+                            <h3>Warning</h3>
+                            <p>There's no data in the text area. The agenda will be deleted.</p>
+                            <p>Are you sure you want to continue?</p>
+                        </div>
+                        <div class="ui-grid-a">
+                            <div class="ui-block-a">
+                                <a href="#" id="popupImportWithoutDataButtonContinue" class="ui-btn ui-corner-all ui-shadow" data-rel="back">Continue</a>
+                            </div>
+                            <div class="ui-block-b">
+                                <a href="#" id="popupImportWithoutDataButtonCancel" class="ui-btn ui-corner-all ui-shadow" data-rel="back">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div data-role="footer" data-position="fixed" style="text-align:center;">
+              <div data-role="controlgroup" data-type="horizontal">
+                <a href="#page-settings" class="ui-btn ui-corner-all ui-shadow ui-icon-gear ui-btn-icon-left" data-transition="slide">Settings</a>
+              </div>
+            </div>
+        </div>
+
+        <!-- Timer page -->
+        <div data-role="page" data-theme="b" id="page-timer">
+            <div data-role="header" data-position="fixed" data-add-back-btn="true">
+                <h1>Timer</h1>
+                <a href="#" id="timerSaveButton" class="ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-check" data-role="button" onclick="buttonClick('toastmastersTimerSave')">Save</a>
+            </div>
+            <div data-role="main" class="ui-content">
+                <div id="timerPopupAnchor"></div>
+                <label for="timerComment" class="ui-hidden-accessible">Comment:</label>
+                <input type="text" name="timerComment" id="timerComment" placeholder="Type comment here"/>
+                <p style="float: left;"><image src="" id="imageTimer"/></p>
+                <h1 id="timer">00:00:00</h1>
+                <a href="#" id="timerStartStopButton" data-role="button" class="ui-btn ui-corner-all ui-btn-inline" value="Start" onclick="startStopTimer()">Start</a>
+                <a href="#" id="timerResetButton" data-role="button" class="ui-btn ui-corner-all ui-btn-inline" value="Reset" onclick="resetTimer()">Reset</a>
+                <a href="#" id="timerCardsButton" data-role="button" class="ui-btn ui-corner-all ui-btn-inline ui-state-disabled" value="Cards" onclick="showTimerCards()">Cards</a>
+                <p style="clear: left;">
+                    <div id="timerSettings" data-role="collapsible" data-collapsed="false">
+                        <h1>Settings&nbsp;&nbsp;&nbsp;<span id="SettingGreen"></span>&nbsp;<span id="SettingAmber"></span>&nbsp;<span id="SettingRed"></span></h1>
+                        <div class="ui-field-contain">
+                            <fieldset data-role="controlgroup" data-type="horizontal">
+                                <legend>Green (MM:SS):</legend>
+                                <label for="timerGreenMinutes">Minutes</label>
+                                <select name="timerGreenMinutes" id="timerGreenMinutes" onchange="updateTimerSettingsTitle('Green')">
+                                    <option value="0">00</option>
+                                    <option value="1">01</option>
+                                    <option value="2">02</option>
+                                    <option value="3">03</option>
+                                    <option value="4">04</option>
+                                    <option value="5">05</option>
+                                    <option value="6">06</option>
+                                    <option value="7">07</option>
+                                    <option value="8">08</option>
+                                    <option value="9">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                    <option value="32">32</option>
+                                    <option value="33">33</option>
+                                    <option value="34">34</option>
+                                    <option value="35">35</option>
+                                    <option value="36">36</option>
+                                    <option value="37">37</option>
+                                    <option value="38">38</option>
+                                    <option value="39">39</option>
+                                    <option value="40">40</option>
+                                    <option value="41">41</option>
+                                    <option value="42">42</option>
+                                    <option value="43">43</option>
+                                    <option value="44">44</option>
+                                    <option value="45">45</option>
+                                    <option value="46">46</option>
+                                    <option value="47">47</option>
+                                    <option value="48">48</option>
+                                    <option value="49">49</option>
+                                    <option value="50">50</option>
+                                    <option value="51">51</option>
+                                    <option value="52">52</option>
+                                    <option value="53">53</option>
+                                    <option value="54">54</option>
+                                    <option value="55">55</option>
+                                    <option value="56">56</option>
+                                    <option value="57">57</option>
+                                    <option value="58">58</option>
+                                    <option value="59">59</option>
+                                </select>
+
+                                <label for="greenS">Seconds</label>
+                                <select name="timerGreenSeconds" id="timerGreenSeconds" onchange="updateTimerSettingsTitle('Green')">
+                                    <option value="00">00</option>
+                                    <option value="30">30</option>
+                                </select>
+                            </fieldset>
+                            <fieldset data-role="controlgroup" data-type="horizontal">
+                                <legend>Amber (MM:SS):</legend>
+                                <label for="timerAmberMinutes">Minutes</label>
+                                <select name="timerAmberMinutes" id="timerAmberMinutes" onchange="updateTimerSettingsTitle('Amber')">
+                                    <option value="0">00</option>
+                                    <option value="1">01</option>
+                                    <option value="2">02</option>
+                                    <option value="3">03</option>
+                                    <option value="4">04</option>
+                                    <option value="5">05</option>
+                                    <option value="6">06</option>
+                                    <option value="7">07</option>
+                                    <option value="8">08</option>
+                                    <option value="9">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                    <option value="32">32</option>
+                                    <option value="33">33</option>
+                                    <option value="34">34</option>
+                                    <option value="35">35</option>
+                                    <option value="36">36</option>
+                                    <option value="37">37</option>
+                                    <option value="38">38</option>
+                                    <option value="39">39</option>
+                                    <option value="40">40</option>
+                                    <option value="41">41</option>
+                                    <option value="42">42</option>
+                                    <option value="43">43</option>
+                                    <option value="44">44</option>
+                                    <option value="45">45</option>
+                                    <option value="46">46</option>
+                                    <option value="47">47</option>
+                                    <option value="48">48</option>
+                                    <option value="49">49</option>
+                                    <option value="50">50</option>
+                                    <option value="51">51</option>
+                                    <option value="52">52</option>
+                                    <option value="53">53</option>
+                                    <option value="54">54</option>
+                                    <option value="55">55</option>
+                                    <option value="56">56</option>
+                                    <option value="57">57</option>
+                                    <option value="58">58</option>
+                                    <option value="59">59</option>
+                                </select>
+
+                                <label for="timerAmberSeconds">Seconds</label>
+                                <select name="timerAmberSeconds" id="timerAmberSeconds" onchange="updateTimerSettingsTitle('Amber')">
+                                    <option value="00">00</option>
+                                    <option value="30">30</option>
+                                </select>
+                            </fieldset>
+
+                            <fieldset data-role="controlgroup" data-type="horizontal">
+                                <legend>Red (MM:SS):</legend>
+                                <label for="timerRedMinutes">Minutes</label>
+                                <select name="timerRedMinutes" id="timerRedMinutes" onchange="updateTimerSettingsTitle('Red')">
+                                    <option value="0">00</option>
+                                    <option value="1">01</option>
+                                    <option value="2">02</option>
+                                    <option value="3">03</option>
+                                    <option value="4">04</option>
+                                    <option value="5">05</option>
+                                    <option value="6">06</option>
+                                    <option value="7">07</option>
+                                    <option value="8">08</option>
+                                    <option value="9">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                    <option value="32">32</option>
+                                    <option value="33">33</option>
+                                    <option value="34">34</option>
+                                    <option value="35">35</option>
+                                    <option value="36">36</option>
+                                    <option value="37">37</option>
+                                    <option value="38">38</option>
+                                    <option value="39">39</option>
+                                    <option value="40">40</option>
+                                    <option value="41">41</option>
+                                    <option value="42">42</option>
+                                    <option value="43">43</option>
+                                    <option value="44">44</option>
+                                    <option value="45">45</option>
+                                    <option value="46">46</option>
+                                    <option value="47">47</option>
+                                    <option value="48">48</option>
+                                    <option value="49">49</option>
+                                    <option value="50">50</option>
+                                    <option value="51">51</option>
+                                    <option value="52">52</option>
+                                    <option value="53">53</option>
+                                    <option value="54">54</option>
+                                    <option value="55">55</option>
+                                    <option value="56">56</option>
+                                    <option value="57">57</option>
+                                    <option value="58">58</option>
+                                    <option value="59">59</option>
+                                </select>
+                                <label for="timerRedSeconds">Seconds</label>
+                                <select name="timerRedSeconds" id="timerRedSeconds" onchange="updateTimerSettingsTitle('Red')">
+                                    <option value="00">00</option>
+                                    <option value="30">30</option>
+                                </select>
+                            </fieldset>
+                        </div>
+                    </div>
+                </p>
+            </div>
+            <div data-role="footer" data-position="fixed" style="text-align:center;">
+              <div data-role="controlgroup" data-type="horizontal">
+                <a href="#page-timer-report" class="ui-btn ui-corner-all ui-shadow ui-icon-bullets ui-btn-icon-left" data-transition="slide">Report</a>
+                <a id="btn-quick-timer" href="#page-quick-timer" class="ui-btn ui-corner-all ui-shadow ui-icon-clock ui-btn-icon-left" data-transition="slide">Quick timer</a>
+                <a href="#page-settings" class="ui-btn ui-corner-all ui-shadow ui-icon-gear ui-btn-icon-left" data-transition="slide">Settings</a>
+              </div>
+            </div>
+            <div id="popup-timerdata-saved" data-role="popup" data-position-to="#timerPopupAnchor" data-transition="pop" data-theme="a">
+                <p>Timer data saved</p>
+            </div>
+        </div>
+
+        <!-- Timer Report page -->
+        <div data-role="page" data-theme="b" id="page-timer-report">
+            <div data-role="header" data-position="fixed" data-add-back-btn="true">
+                <h1>Timer Report</h1>
+                <a href="#" id="timerreportButtonClear" class="ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-delete" data-role="button" onclick="removeDataFromLocalStorage()">Clear</a>
+            </div>
+            <div data-role="main" class="ui-content">
+                <div data-role="collapsible" id="report-summary">
+                    <h1>Summary &amp; Filter</h1>
+
+                    <div data-role="content" id="TimerSummary" class="ui-grid-c ui-responsive">
+                        <div class="ui-block-a">
+                            <label for="earlyTime">Early: <span id="NumEarly"></span></label>
+                            <input type="checkbox" name="earlyTime" id="earlyTime" data-mini="true" onchange="readTimerDataFromLocalStorage()">
+                        </div>
+                        <div class="ui-block-b">
+                            <label for="greenTime">Green: <span id="NumGreen"></span></label>
+                            <input type="checkbox" name="greenTime" id="greenTime" data-mini="true" onchange="readTimerDataFromLocalStorage()">
+                        </div>
+                        <div class="ui-block-c">
+                            <label for="amberTime">Amber: <span id="NumAmber"></span></label>
+                            <input type="checkbox" name="amberTime" id="amberTime" data-mini="true" onchange="readTimerDataFromLocalStorage()">
+                        </div>
+                        <div class="ui-block-d">
+                            <label for="redTime">Red: <span id="NumRed"></span></label>
+                            <input type="checkbox" name="redTime" id="redTime" data-mini="true" onchange="readTimerDataFromLocalStorage()">
+                        </div>
+                    </div>
+                    <div id="summary-chart">
+                        <small>
+                            <table id="Header" width="100%">
+                                <tr>
+                                    <td width="25%" style="text-align:right">25%|</td>
+                                    <td width="25%" style="text-align:right">50%|</td>
+                                    <td width="25%" style="text-align:right">75%|</td>
+                                    <td width="25%" style="text-align:right">100%|</td>
+                                </tr>
+                            </table>
+                        <table id="Early" width="100%">
+                            <tr>
+                                <td id="BarEarly" width="25%">&nbsp;</td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <table id="Green" width="100%">
+                            <tr>
+                                <td id="BarGreen" width="25%">&nbsp;</td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <table id="Amber" width="100%">
+                            <tr>
+                                <td id="BarAmber" width="25%">&nbsp;</td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <table id="Red" width="100%">
+                            <tr>
+                                <td id="BarRed" width="25%">&nbsp;</td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        </small>
+                    </div>
+                    <div>
+                        <form class="ui-filterable">
+                          <input id="timerReportFilter" data-type="search" data-mini="true" placeholder="Enter filter here...">
+                        </form>
+                    </div>
+                </div>
+                <div data-role="content" id="ListDiv"></div>
+            </div>
+            <div id="popup-timer-report-confirm-delete" data-role="popup" data-transition="pop" data-theme="a" data-dismissible="false">
+                <form>
+                    <div style="padding:10px 20px;">
+                        <div>
+                            <p>Are you sure you want to delete this row?</p>
+                        </div>
+                        <div class="ui-grid-a">
+                            <div class="ui-block-a">
+                                <a href="#" id="popupTimerReportConfirmDeleteButtonContinue" class="ui-btn ui-corner-all ui-shadow" data-rel="back">Delete</a>
+                            </div>
+                            <div class="ui-block-b">
+                                <a href="#" id="popupTimerReportConfirmDeleteButtonCancel" class="ui-btn ui-corner-all ui-shadow" data-rel="back">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div id="popup-timer-report-confirm-delete-all" data-role="popup" data-transition="pop" data-theme="a" data-dismissible="false">
+                <form>
+                    <div style="padding:10px 20px;">
+                        <div>
+                            <p>Are you sure you want to delete the entire report?</p>
+                        </div>
+                        <div class="ui-grid-a">
+                            <div class="ui-block-a">
+                                <a href="#" id="popupTimerReportConfirmDeleteButtonContinue" class="ui-btn ui-corner-all ui-shadow" data-rel="back">Delete all</a>
+                            </div>
+                            <div class="ui-block-b">
+                                <a href="#" id="popupTimerReportConfirmDeleteButtonCancel" class="ui-btn ui-corner-all ui-shadow" data-rel="back">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Quick Timer page -->
+        <div data-role="page" data-theme="b" id="page-quick-timer">
+            <div data-role="header" data-position="fixed" data-add-back-btn="true">
+                <h1>Quick Timer</h1>
+            </div>
+            <div data-role="main" class="ui-content">
+                <div id="quickTimerPopupAnchor"></div>
+                <!--<p style="float: left;">-->
+                <div>
+                    <h1 id="quick-timer">00:00:00</h1>
+                    <a href="#" id="quickTimerStartStopButton" data-role="button" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" value="Start" onclick="startStopQuickTimer()">Start</a>
+                    <a href="#" id="quickTimerResetButton" data-role="button" class="ui-btn ui-corner-all ui-btn-inline" value="Reset" onclick="resetQuickTimer()">Reset</a>
+                </div>
+                <p></p>
+                <div id="quick-timer-setting" data-role="navbar" data-iconpos="bottom">
+                    <ul>
+                        <li><a href="#" id="btn-qt-1" class="qtbutton" onclick="setQuickTimerLimit(60)"><br>1'<br>&nbsp;</a></li>
+                        <li><a href="#" id="btn-qt-2" class="qtbutton" onclick="setQuickTimerLimit(120)"><br>2'<br>&nbsp;</a></li>
+                        <li><a href="#" id="btn-qt-3" class="qtbutton" onclick="setQuickTimerLimit(180)"><br>3'<br>&nbsp;</a></li>
+                        <li><a href="#" id="btn-qt-5" class="qtbutton" onclick="setQuickTimerLimit(300)"><br>5'<br>&nbsp;</a></li>
+                        <li><a href="#" id="btn-qt-10" class="qtbutton" onclick="setQuickTimerLimit(600)"><br>10'<br>&nbsp;</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div data-role="footer" data-position="fixed" style="text-align:center;">
+              <div data-role="controlgroup" data-type="horizontal">
+                <a href="#page-settings" class="ui-btn ui-corner-all ui-shadow ui-icon-gear ui-btn-icon-left" data-transition="slide">Settings</a>
+              </div>
+            </div>
+        </div>
+
+        <!-- Meeting Report page -->
+        <div data-role="page" data-theme="b" id="page-meeting-report">
+            <div data-role="header" data-position="fixed" data-add-back-btn="true">
+                <h1>Meeting Report</h1>
+            </div>
+            <div data-role="main" class="ui-content">
+                <div>This part of the app is under development. Please check again in the near future.</div>
+            </div>
+        </div>
+
+        <!-- Settings page -->
+        <div data-role="page" data-theme="b" id="page-settings">
+            <div data-role="header" data-position="fixed" data-add-back-btn="true">
+                <h1>Settings</h1>
+            </div>
+            <div data-role="main" class="ui-content">
+                <div id="version-info">
+                    <h3>Version info</h3>
+                    <div id="version"></div>
+                </div>
+                <div data-role="collapsible-set">
+                    <div data-role="collapsible" id="agenda-settings" data-collapsed="false">
+                        <h1>Agenda</h1>
+                        <div class="ui-field-contain">
+                          <label for="easyspeak-server" class="select">easy-Speak region</label>
+                          <select name="easyspeak-server" id="easyspeak-server">
+                            <option value="tmclub.eu">Europe (excl. UK &amp; Ireland)</option>
+                            <option value="Toastmasterclub.org">UK &amp; Ireland</option>
+                            <option value="easy-Speak.org">Outside Europe</option>
+                            <option value="no-easy-Speak">Don't use easy-Speak</option>
+                          </select>
+                        </div>                        
+                        <div class="ui-field-contain">
+                            <label for="insomnia-agenda">Stay awake</label>
+                            <input type="checkbox" data-role="flipswitch" name="insomnia-agenda" id="insomnia-agenda" onchange="saveSettingsToLocalStorage()" device-only="true">
+                        </div>
+                        <div class="ui-field-contain">
+                            <label for="agenda-row-height">Row height</label>
+                            <input type="range" name="agenda-row-height" id="agenda-row-height" value="2" min="2" max="10" step=".1" data-popup-enabled="true">
+                        </div>
+                        <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" class="ui-field-contain">
+                            <legend>Timer activation</legend>
+                            <label for="timerbutton-agenda-setting">Button</label>
+                            <input type="radio" name="timerbutton-row-agenda-setting" id="timerbutton-agenda-setting" value="true" checked>
+                            <label for="row-selection-agenda-setting">Row</label>
+                            <input type="radio" name="timerbutton-row-agenda-setting" id="row-selection-agenda-setting" value="false">
+                        </fieldset>
+                    </div>
+                    <div data-role="collapsible" id="timer-settings">
+                        <h1>Timer</h1>
+                        <div>When the timer reaches a limit:</div>
+                        <div class="ui-field-contain">
+                            <label for="vibrate">Vibrate</label>
+                            <input type="checkbox" data-role="flipswitch" name="vibrate" id="vibrate" onchange="saveSettingsToLocalStorage()" device-only="true">
+                        </div>
+                        <div>When the timer is running:</div>
+                        <div class="ui-field-contain">
+                            <label for="insomnia">Stay awake</label>
+                            <input type="checkbox" data-role="flipswitch" name="insomnia" id="insomnia" onchange="saveSettingsToLocalStorage()" device-only="true">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dynamic Timer Card page -->
+        <div data-role="page" data-theme="b" class="page-timer-card" id="page-dynamic-card" style="background:grey;">
+            <div data-role="header" data-position="fixed" data-add-back-btn="true">
+                <h1>Timerkeeper Card</h1>
+            </div>
+            <div data-role="main" class="ui-content">
+            </div>
+        </div>
+
+        <!-- Card Green page -->
+        <div data-role="page" data-theme="b" class="page-timer-card" id="page-card-green" style="background:#00ff00;">
+            <div data-role="main" class="ui-content">
+            </div>
+			<div data-role="footer" data-position="fixed" data-fullscreen="true" style="text-align:center;">
+				<div data-role="controlgroup" data-type="horizontal">
+					<a id="btn-prev" href="#page-home" class="ui-btn ui-icon-home ui-btn-icon-left" data-transition="slide" data-direction="reverse">Home</a>
+					<a id="btn-next" href="#page-card-amber" class="ui-btn ui-icon-carat-r ui-btn-icon-right" data-transition="slide">Amber</a>
+				</div>
+			</div>
+        </div>
+
+        <!-- Card Amber page -->
+        <div data-role="page" data-theme="b" class="page-timer-card" id="page-card-amber" style="background:#ffff00;">
+            <div data-role="main" class="ui-content">
+            </div>
+			<div data-role="footer" data-position="fixed" data-fullscreen="true" style="text-align:center;">
+				<div data-role="controlgroup" data-type="horizontal">
+					<a id="btn-prev" href="#page-card-green" class="ui-btn ui-icon-carat-l ui-btn-icon-left" data-transition="slide" data-direction="reverse">Green</a>
+					<a id="btn-next" href="#page-card-red" class="ui-btn ui-icon-carat-r ui-btn-icon-right" data-transition="slide">Red</a>
+				</div>
+			</div>
+        </div>
+
+        <!-- Card Red page -->
+        <div data-role="page" data-theme="b" class="page-timer-card" id="page-card-red" style="background:#ff0000;">
+            <div data-role="main" class="ui-content">
+            </div>
+			<div data-role="footer" data-position="fixed" data-fullscreen="true" style="text-align:center;">
+				<div data-role="controlgroup" data-type="horizontal">
+					<a id="btn-prev" href="#page-card-amber" class="ui-btn ui-icon-carat-l ui-btn-icon-left" data-transition="slide" data-direction="reverse">Amber</a>
+					<a id="btn-next" href="#page-card-stop" class="ui-btn ui-icon-carat-r ui-btn-icon-right" data-transition="slide">Stop</a>
+				</div>
+			</div>
+        </div>
+
+        <!-- Card Stop page -->
+        <div data-role="page" data-theme="b" class="page-timer-card" id="page-card-stop" style="background:red;">
+            <div data-role="main" class="ui-content">
+				<div class="STOP">STOP</div>
+            </div>
+			<div data-role="footer" data-position="fixed" data-fullscreen="true" style="text-align:center;">
+				<div data-role="controlgroup" data-type="horizontal">
+					<a id="btn-prev" href="#page-card-red"  class="ui-btn ui-icon-carat-l ui-btn-icon-left" data-transition="slide" data-direction="reverse">Red</a>
+					<a id="btn-next" href="#page-card-stop-now" class="ui-btn ui-icon-carat-r ui-btn-icon-right" data-transition="slide">Now!</a>
+				</div>
+			</div>
+        </div>
+
+        <!-- Card Stop Now page -->
+        <div data-role="page" data-theme="b" class="page-timer-card" id="page-card-stop-now" style="background:#000000;">
+            <div data-role="main" class="ui-content">
+				<div class="STOP">NOW!</div>
+            </div>
+			<div data-role="footer" data-position="fixed" data-fullscreen="true" style="text-align:center;">
+				<div data-role="controlgroup" data-type="horizontal">
+					<a id="btn-prev" href="#page-card-stop"  class="ui-btn ui-icon-carat-l ui-btn-icon-left" data-transition="slide" data-direction="reverse">Stop</a>
+					<a id="btn-next" href="#page-home" class="ui-btn ui-icon-home ui-btn-icon-right" data-transition="slide">Home</a>
+				</div>
+			</div>
+        </div>
+    </body>
+</html>
