@@ -1,5 +1,9 @@
 History of changes
 ==================
+1.4.0
+- Manually selecting the time limits was a bit of a pain, so it's been simplified
+- Killed a sneaky bug in the timer
+
 1.3.5
 - Fixed the URL to easy-Speak, which now requires to use https
 - Increased font size in Quick Timer
