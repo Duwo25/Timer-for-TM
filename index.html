@@ -4,7 +4,7 @@ File .....: index.html
 
 Author ...: Wouter Dupré
 Created ..: 2016-07-15
-Modified .: 2016-09-29
+Modified .: 2017-06-27
 -->
 <html>
     <head>
@@ -215,219 +215,385 @@ Modified .: 2016-09-29
                         <div class="ui-field-contain">
                             <fieldset data-role="controlgroup" data-type="horizontal">
                                 <legend>Green (MM:SS):</legend>
-                                <label for="timerGreenMinutes">Minutes</label>
-                                <select name="timerGreenMinutes" id="timerGreenMinutes" onchange="updateTimerSettingsTitle('Green')">
-                                    <option value="0">00</option>
-                                    <option value="1">01</option>
-                                    <option value="2">02</option>
-                                    <option value="3">03</option>
-                                    <option value="4">04</option>
-                                    <option value="5">05</option>
-                                    <option value="6">06</option>
-                                    <option value="7">07</option>
-                                    <option value="8">08</option>
-                                    <option value="9">09</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12</option>
-                                    <option value="13">13</option>
-                                    <option value="14">14</option>
-                                    <option value="15">15</option>
-                                    <option value="16">16</option>
-                                    <option value="17">17</option>
-                                    <option value="18">18</option>
-                                    <option value="19">19</option>
-                                    <option value="20">20</option>
-                                    <option value="21">21</option>
-                                    <option value="22">22</option>
-                                    <option value="23">23</option>
-                                    <option value="24">24</option>
-                                    <option value="25">25</option>
-                                    <option value="26">26</option>
-                                    <option value="27">27</option>
-                                    <option value="28">28</option>
-                                    <option value="29">29</option>
-                                    <option value="30">30</option>
-                                    <option value="31">31</option>
-                                    <option value="32">32</option>
-                                    <option value="33">33</option>
-                                    <option value="34">34</option>
-                                    <option value="35">35</option>
-                                    <option value="36">36</option>
-                                    <option value="37">37</option>
-                                    <option value="38">38</option>
-                                    <option value="39">39</option>
-                                    <option value="40">40</option>
-                                    <option value="41">41</option>
-                                    <option value="42">42</option>
-                                    <option value="43">43</option>
-                                    <option value="44">44</option>
-                                    <option value="45">45</option>
-                                    <option value="46">46</option>
-                                    <option value="47">47</option>
-                                    <option value="48">48</option>
-                                    <option value="49">49</option>
-                                    <option value="50">50</option>
-                                    <option value="51">51</option>
-                                    <option value="52">52</option>
-                                    <option value="53">53</option>
-                                    <option value="54">54</option>
-                                    <option value="55">55</option>
-                                    <option value="56">56</option>
-                                    <option value="57">57</option>
-                                    <option value="58">58</option>
-                                    <option value="59">59</option>
-                                </select>
-
-                                <label for="greenS">Seconds</label>
-                                <select name="timerGreenSeconds" id="timerGreenSeconds" onchange="updateTimerSettingsTitle('Green')">
-                                    <option value="00">00</option>
-                                    <option value="30">30</option>
+                                <label for="timerGreen">Minutes</label>
+                                <select name="timerGreen" id="timerGreen" onchange="updateTimerSettingsTitle('Green')">
+                                    <option value="0">00:00</option>
+                                    <option value="30">00:30</option>
+                                    <option value="60">01:00</option>
+                                    <option value="90">01:30</option>
+                                    <option value="120">02:00</option>
+                                    <option value="150">02:30</option>
+                                    <option value="180">03:00</option>
+                                    <option value="210">03:30</option>
+                                    <option value="240">04:00</option>
+                                    <option value="270">04:30</option>
+                                    <option value="300">05:00</option>
+                                    <option value="330">05:30</option>
+                                    <option value="360">06:00</option>
+                                    <option value="390">06:30</option>
+                                    <option value="420">07:00</option>
+                                    <option value="450">07:30</option>
+                                    <option value="480">08:00</option>
+                                    <option value="510">08:30</option>
+                                    <option value="540">09:00</option>
+                                    <option value="570">09:30</option>
+                                    <option value="600">10:00</option>
+                                    <option value="630">10:30</option>
+                                    <option value="660">11:00</option>
+                                    <option value="690">11:30</option>
+                                    <option value="720">12:00</option>
+                                    <option value="750">12:30</option>
+                                    <option value="780">13:00</option>
+                                    <option value="810">13:30</option>
+                                    <option value="840">14:00</option>
+                                    <option value="870">14:30</option>
+                                    <option value="900">15:00</option>
+                                    <option value="930">15:30</option>
+                                    <option value="960">16:00</option>
+                                    <option value="990">16:30</option>
+                                    <option value="1020">17:00</option>
+                                    <option value="1050">17:30</option>
+                                    <option value="1080">18:00</option>
+                                    <option value="1110">18:30</option>
+                                    <option value="1140">19:00</option>
+                                    <option value="1170">19:30</option>
+                                    <option value="1200">20:00</option>
+                                    <option value="1230">20:30</option>
+                                    <option value="1260">21:00</option>
+                                    <option value="1290">21:30</option>
+                                    <option value="1320">22:00</option>
+                                    <option value="1350">22:30</option>
+                                    <option value="1380">23:00</option>
+                                    <option value="1410">23:30</option>
+                                    <option value="1440">24:00</option>
+                                    <option value="1470">24:30</option>
+                                    <option value="1500">25:00</option>
+                                    <option value="1530">25:30</option>
+                                    <option value="1560">26:00</option>
+                                    <option value="1590">26:30</option>
+                                    <option value="1620">27:00</option>
+                                    <option value="1650">27:30</option>
+                                    <option value="1680">28:00</option>
+                                    <option value="1710">28:30</option>
+                                    <option value="1740">29:00</option>
+                                    <option value="1770">29:30</option>
+                                    <option value="1800">30:00</option>
+                                    <option value="1830">30:30</option>
+                                    <option value="1860">31:00</option>
+                                    <option value="1890">31:30</option>
+                                    <option value="1920">32:00</option>
+                                    <option value="1950">32:30</option>
+                                    <option value="1980">33:00</option>
+                                    <option value="2010">33:30</option>
+                                    <option value="2040">34:00</option>
+                                    <option value="2070">34:30</option>
+                                    <option value="2100">35:00</option>
+                                    <option value="2130">35:30</option>
+                                    <option value="2160">36:00</option>
+                                    <option value="2190">36:30</option>
+                                    <option value="2220">37:00</option>
+                                    <option value="2250">37:30</option>
+                                    <option value="2280">38:00</option>
+                                    <option value="2310">38:30</option>
+                                    <option value="2340">39:00</option>
+                                    <option value="2370">39:30</option>
+                                    <option value="2400">40:00</option>
+                                    <option value="2430">40:30</option>
+                                    <option value="2460">41:00</option>
+                                    <option value="2490">41:30</option>
+                                    <option value="2520">42:00</option>
+                                    <option value="2550">42:30</option>
+                                    <option value="2580">43:00</option>
+                                    <option value="2610">43:30</option>
+                                    <option value="2640">44:00</option>
+                                    <option value="2670">44:30</option>
+                                    <option value="2700">45:00</option>
+                                    <option value="2730">45:30</option>
+                                    <option value="2760">46:00</option>
+                                    <option value="2790">46:30</option>
+                                    <option value="2820">47:00</option>
+                                    <option value="2850">47:30</option>
+                                    <option value="2880">48:00</option>
+                                    <option value="2910">48:30</option>
+                                    <option value="2940">49:00</option>
+                                    <option value="2970">49:30</option>
+                                    <option value="3000">50:00</option>
+                                    <option value="3030">50:30</option>
+                                    <option value="3060">51:00</option>
+                                    <option value="3090">51:30</option>
+                                    <option value="3120">52:00</option>
+                                    <option value="3150">52:30</option>
+                                    <option value="3180">53:00</option>
+                                    <option value="3210">53:30</option>
+                                    <option value="3240">54:00</option>
+                                    <option value="3270">54:30</option>
+                                    <option value="3300">55:00</option>
+                                    <option value="3330">55:30</option>
+                                    <option value="3360">56:00</option>
+                                    <option value="3390">56:30</option>
+                                    <option value="3420">57:00</option>
+                                    <option value="3450">57:30</option>
+                                    <option value="3480">58:00</option>
+                                    <option value="3510">58:30</option>
+                                    <option value="3540">59:00</option>
+                                    <option value="3570">59:30</option>
+                                    <option value="3600">60:00</option>
                                 </select>
                             </fieldset>
                             <fieldset data-role="controlgroup" data-type="horizontal">
                                 <legend>Amber (MM:SS):</legend>
-                                <label for="timerAmberMinutes">Minutes</label>
-                                <select name="timerAmberMinutes" id="timerAmberMinutes" onchange="updateTimerSettingsTitle('Amber')">
-                                    <option value="0">00</option>
-                                    <option value="1">01</option>
-                                    <option value="2">02</option>
-                                    <option value="3">03</option>
-                                    <option value="4">04</option>
-                                    <option value="5">05</option>
-                                    <option value="6">06</option>
-                                    <option value="7">07</option>
-                                    <option value="8">08</option>
-                                    <option value="9">09</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12</option>
-                                    <option value="13">13</option>
-                                    <option value="14">14</option>
-                                    <option value="15">15</option>
-                                    <option value="16">16</option>
-                                    <option value="17">17</option>
-                                    <option value="18">18</option>
-                                    <option value="19">19</option>
-                                    <option value="20">20</option>
-                                    <option value="21">21</option>
-                                    <option value="22">22</option>
-                                    <option value="23">23</option>
-                                    <option value="24">24</option>
-                                    <option value="25">25</option>
-                                    <option value="26">26</option>
-                                    <option value="27">27</option>
-                                    <option value="28">28</option>
-                                    <option value="29">29</option>
-                                    <option value="30">30</option>
-                                    <option value="31">31</option>
-                                    <option value="32">32</option>
-                                    <option value="33">33</option>
-                                    <option value="34">34</option>
-                                    <option value="35">35</option>
-                                    <option value="36">36</option>
-                                    <option value="37">37</option>
-                                    <option value="38">38</option>
-                                    <option value="39">39</option>
-                                    <option value="40">40</option>
-                                    <option value="41">41</option>
-                                    <option value="42">42</option>
-                                    <option value="43">43</option>
-                                    <option value="44">44</option>
-                                    <option value="45">45</option>
-                                    <option value="46">46</option>
-                                    <option value="47">47</option>
-                                    <option value="48">48</option>
-                                    <option value="49">49</option>
-                                    <option value="50">50</option>
-                                    <option value="51">51</option>
-                                    <option value="52">52</option>
-                                    <option value="53">53</option>
-                                    <option value="54">54</option>
-                                    <option value="55">55</option>
-                                    <option value="56">56</option>
-                                    <option value="57">57</option>
-                                    <option value="58">58</option>
-                                    <option value="59">59</option>
-                                </select>
-
-                                <label for="timerAmberSeconds">Seconds</label>
-                                <select name="timerAmberSeconds" id="timerAmberSeconds" onchange="updateTimerSettingsTitle('Amber')">
-                                    <option value="00">00</option>
-                                    <option value="30">30</option>
+                                <label for="timerAmber">Minutes</label>
+                                <select name="timerAmber" id="timerAmber" onchange="updateTimerSettingsTitle('Amber')">
+                                    <option value="0">00:00</option>
+                                    <option value="30">00:30</option>
+                                    <option value="60">01:00</option>
+                                    <option value="90">01:30</option>
+                                    <option value="120">02:00</option>
+                                    <option value="150">02:30</option>
+                                    <option value="180">03:00</option>
+                                    <option value="210">03:30</option>
+                                    <option value="240">04:00</option>
+                                    <option value="270">04:30</option>
+                                    <option value="300">05:00</option>
+                                    <option value="330">05:30</option>
+                                    <option value="360">06:00</option>
+                                    <option value="390">06:30</option>
+                                    <option value="420">07:00</option>
+                                    <option value="450">07:30</option>
+                                    <option value="480">08:00</option>
+                                    <option value="510">08:30</option>
+                                    <option value="540">09:00</option>
+                                    <option value="570">09:30</option>
+                                    <option value="600">10:00</option>
+                                    <option value="630">10:30</option>
+                                    <option value="660">11:00</option>
+                                    <option value="690">11:30</option>
+                                    <option value="720">12:00</option>
+                                    <option value="750">12:30</option>
+                                    <option value="780">13:00</option>
+                                    <option value="810">13:30</option>
+                                    <option value="840">14:00</option>
+                                    <option value="870">14:30</option>
+                                    <option value="900">15:00</option>
+                                    <option value="930">15:30</option>
+                                    <option value="960">16:00</option>
+                                    <option value="990">16:30</option>
+                                    <option value="1020">17:00</option>
+                                    <option value="1050">17:30</option>
+                                    <option value="1080">18:00</option>
+                                    <option value="1110">18:30</option>
+                                    <option value="1140">19:00</option>
+                                    <option value="1170">19:30</option>
+                                    <option value="1200">20:00</option>
+                                    <option value="1230">20:30</option>
+                                    <option value="1260">21:00</option>
+                                    <option value="1290">21:30</option>
+                                    <option value="1320">22:00</option>
+                                    <option value="1350">22:30</option>
+                                    <option value="1380">23:00</option>
+                                    <option value="1410">23:30</option>
+                                    <option value="1440">24:00</option>
+                                    <option value="1470">24:30</option>
+                                    <option value="1500">25:00</option>
+                                    <option value="1530">25:30</option>
+                                    <option value="1560">26:00</option>
+                                    <option value="1590">26:30</option>
+                                    <option value="1620">27:00</option>
+                                    <option value="1650">27:30</option>
+                                    <option value="1680">28:00</option>
+                                    <option value="1710">28:30</option>
+                                    <option value="1740">29:00</option>
+                                    <option value="1770">29:30</option>
+                                    <option value="1800">30:00</option>
+                                    <option value="1830">30:30</option>
+                                    <option value="1860">31:00</option>
+                                    <option value="1890">31:30</option>
+                                    <option value="1920">32:00</option>
+                                    <option value="1950">32:30</option>
+                                    <option value="1980">33:00</option>
+                                    <option value="2010">33:30</option>
+                                    <option value="2040">34:00</option>
+                                    <option value="2070">34:30</option>
+                                    <option value="2100">35:00</option>
+                                    <option value="2130">35:30</option>
+                                    <option value="2160">36:00</option>
+                                    <option value="2190">36:30</option>
+                                    <option value="2220">37:00</option>
+                                    <option value="2250">37:30</option>
+                                    <option value="2280">38:00</option>
+                                    <option value="2310">38:30</option>
+                                    <option value="2340">39:00</option>
+                                    <option value="2370">39:30</option>
+                                    <option value="2400">40:00</option>
+                                    <option value="2430">40:30</option>
+                                    <option value="2460">41:00</option>
+                                    <option value="2490">41:30</option>
+                                    <option value="2520">42:00</option>
+                                    <option value="2550">42:30</option>
+                                    <option value="2580">43:00</option>
+                                    <option value="2610">43:30</option>
+                                    <option value="2640">44:00</option>
+                                    <option value="2670">44:30</option>
+                                    <option value="2700">45:00</option>
+                                    <option value="2730">45:30</option>
+                                    <option value="2760">46:00</option>
+                                    <option value="2790">46:30</option>
+                                    <option value="2820">47:00</option>
+                                    <option value="2850">47:30</option>
+                                    <option value="2880">48:00</option>
+                                    <option value="2910">48:30</option>
+                                    <option value="2940">49:00</option>
+                                    <option value="2970">49:30</option>
+                                    <option value="3000">50:00</option>
+                                    <option value="3030">50:30</option>
+                                    <option value="3060">51:00</option>
+                                    <option value="3090">51:30</option>
+                                    <option value="3120">52:00</option>
+                                    <option value="3150">52:30</option>
+                                    <option value="3180">53:00</option>
+                                    <option value="3210">53:30</option>
+                                    <option value="3240">54:00</option>
+                                    <option value="3270">54:30</option>
+                                    <option value="3300">55:00</option>
+                                    <option value="3330">55:30</option>
+                                    <option value="3360">56:00</option>
+                                    <option value="3390">56:30</option>
+                                    <option value="3420">57:00</option>
+                                    <option value="3450">57:30</option>
+                                    <option value="3480">58:00</option>
+                                    <option value="3510">58:30</option>
+                                    <option value="3540">59:00</option>
+                                    <option value="3570">59:30</option>
+                                    <option value="3600">60:00</option>
                                 </select>
                             </fieldset>
 
                             <fieldset data-role="controlgroup" data-type="horizontal">
                                 <legend>Red (MM:SS):</legend>
-                                <label for="timerRedMinutes">Minutes</label>
-                                <select name="timerRedMinutes" id="timerRedMinutes" onchange="updateTimerSettingsTitle('Red')">
-                                    <option value="0">00</option>
-                                    <option value="1">01</option>
-                                    <option value="2">02</option>
-                                    <option value="3">03</option>
-                                    <option value="4">04</option>
-                                    <option value="5">05</option>
-                                    <option value="6">06</option>
-                                    <option value="7">07</option>
-                                    <option value="8">08</option>
-                                    <option value="9">09</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12</option>
-                                    <option value="13">13</option>
-                                    <option value="14">14</option>
-                                    <option value="15">15</option>
-                                    <option value="16">16</option>
-                                    <option value="17">17</option>
-                                    <option value="18">18</option>
-                                    <option value="19">19</option>
-                                    <option value="20">20</option>
-                                    <option value="21">21</option>
-                                    <option value="22">22</option>
-                                    <option value="23">23</option>
-                                    <option value="24">24</option>
-                                    <option value="25">25</option>
-                                    <option value="26">26</option>
-                                    <option value="27">27</option>
-                                    <option value="28">28</option>
-                                    <option value="29">29</option>
-                                    <option value="30">30</option>
-                                    <option value="31">31</option>
-                                    <option value="32">32</option>
-                                    <option value="33">33</option>
-                                    <option value="34">34</option>
-                                    <option value="35">35</option>
-                                    <option value="36">36</option>
-                                    <option value="37">37</option>
-                                    <option value="38">38</option>
-                                    <option value="39">39</option>
-                                    <option value="40">40</option>
-                                    <option value="41">41</option>
-                                    <option value="42">42</option>
-                                    <option value="43">43</option>
-                                    <option value="44">44</option>
-                                    <option value="45">45</option>
-                                    <option value="46">46</option>
-                                    <option value="47">47</option>
-                                    <option value="48">48</option>
-                                    <option value="49">49</option>
-                                    <option value="50">50</option>
-                                    <option value="51">51</option>
-                                    <option value="52">52</option>
-                                    <option value="53">53</option>
-                                    <option value="54">54</option>
-                                    <option value="55">55</option>
-                                    <option value="56">56</option>
-                                    <option value="57">57</option>
-                                    <option value="58">58</option>
-                                    <option value="59">59</option>
-                                </select>
-                                <label for="timerRedSeconds">Seconds</label>
-                                <select name="timerRedSeconds" id="timerRedSeconds" onchange="updateTimerSettingsTitle('Red')">
-                                    <option value="00">00</option>
-                                    <option value="30">30</option>
-                                </select>
+                                <label for="timerRed">Minutes</label>
+                                <select name="timerRed" id="timerRed" onchange="updateTimerSettingsTitle('Red')">
+                                   <option value="0">00:00</option>
+                                    <option value="30">00:30</option>
+                                    <option value="60">01:00</option>
+                                    <option value="90">01:30</option>
+                                    <option value="120">02:00</option>
+                                    <option value="150">02:30</option>
+                                    <option value="180">03:00</option>
+                                    <option value="210">03:30</option>
+                                    <option value="240">04:00</option>
+                                    <option value="270">04:30</option>
+                                    <option value="300">05:00</option>
+                                    <option value="330">05:30</option>
+                                    <option value="360">06:00</option>
+                                    <option value="390">06:30</option>
+                                    <option value="420">07:00</option>
+                                    <option value="450">07:30</option>
+                                    <option value="480">08:00</option>
+                                    <option value="510">08:30</option>
+                                    <option value="540">09:00</option>
+                                    <option value="570">09:30</option>
+                                    <option value="600">10:00</option>
+                                    <option value="630">10:30</option>
+                                    <option value="660">11:00</option>
+                                    <option value="690">11:30</option>
+                                    <option value="720">12:00</option>
+                                    <option value="750">12:30</option>
+                                    <option value="780">13:00</option>
+                                    <option value="810">13:30</option>
+                                    <option value="840">14:00</option>
+                                    <option value="870">14:30</option>
+                                    <option value="900">15:00</option>
+                                    <option value="930">15:30</option>
+                                    <option value="960">16:00</option>
+                                    <option value="990">16:30</option>
+                                    <option value="1020">17:00</option>
+                                    <option value="1050">17:30</option>
+                                    <option value="1080">18:00</option>
+                                    <option value="1110">18:30</option>
+                                    <option value="1140">19:00</option>
+                                    <option value="1170">19:30</option>
+                                    <option value="1200">20:00</option>
+                                    <option value="1230">20:30</option>
+                                    <option value="1260">21:00</option>
+                                    <option value="1290">21:30</option>
+                                    <option value="1320">22:00</option>
+                                    <option value="1350">22:30</option>
+                                    <option value="1380">23:00</option>
+                                    <option value="1410">23:30</option>
+                                    <option value="1440">24:00</option>
+                                    <option value="1470">24:30</option>
+                                    <option value="1500">25:00</option>
+                                    <option value="1530">25:30</option>
+                                    <option value="1560">26:00</option>
+                                    <option value="1590">26:30</option>
+                                    <option value="1620">27:00</option>
+                                    <option value="1650">27:30</option>
+                                    <option value="1680">28:00</option>
+                                    <option value="1710">28:30</option>
+                                    <option value="1740">29:00</option>
+                                    <option value="1770">29:30</option>
+                                    <option value="1800">30:00</option>
+                                    <option value="1830">30:30</option>
+                                    <option value="1860">31:00</option>
+                                    <option value="1890">31:30</option>
+                                    <option value="1920">32:00</option>
+                                    <option value="1950">32:30</option>
+                                    <option value="1980">33:00</option>
+                                    <option value="2010">33:30</option>
+                                    <option value="2040">34:00</option>
+                                    <option value="2070">34:30</option>
+                                    <option value="2100">35:00</option>
+                                    <option value="2130">35:30</option>
+                                    <option value="2160">36:00</option>
+                                    <option value="2190">36:30</option>
+                                    <option value="2220">37:00</option>
+                                    <option value="2250">37:30</option>
+                                    <option value="2280">38:00</option>
+                                    <option value="2310">38:30</option>
+                                    <option value="2340">39:00</option>
+                                    <option value="2370">39:30</option>
+                                    <option value="2400">40:00</option>
+                                    <option value="2430">40:30</option>
+                                    <option value="2460">41:00</option>
+                                    <option value="2490">41:30</option>
+                                    <option value="2520">42:00</option>
+                                    <option value="2550">42:30</option>
+                                    <option value="2580">43:00</option>
+                                    <option value="2610">43:30</option>
+                                    <option value="2640">44:00</option>
+                                    <option value="2670">44:30</option>
+                                    <option value="2700">45:00</option>
+                                    <option value="2730">45:30</option>
+                                    <option value="2760">46:00</option>
+                                    <option value="2790">46:30</option>
+                                    <option value="2820">47:00</option>
+                                    <option value="2850">47:30</option>
+                                    <option value="2880">48:00</option>
+                                    <option value="2910">48:30</option>
+                                    <option value="2940">49:00</option>
+                                    <option value="2970">49:30</option>
+                                    <option value="3000">50:00</option>
+                                    <option value="3030">50:30</option>
+                                    <option value="3060">51:00</option>
+                                    <option value="3090">51:30</option>
+                                    <option value="3120">52:00</option>
+                                    <option value="3150">52:30</option>
+                                    <option value="3180">53:00</option>
+                                    <option value="3210">53:30</option>
+                                    <option value="3240">54:00</option>
+                                    <option value="3270">54:30</option>
+                                    <option value="3300">55:00</option>
+                                    <option value="3330">55:30</option>
+                                    <option value="3360">56:00</option>
+                                    <option value="3390">56:30</option>
+                                    <option value="3420">57:00</option>
+                                    <option value="3450">57:30</option>
+                                    <option value="3480">58:00</option>
+                                    <option value="3510">58:30</option>
+                                    <option value="3540">59:00</option>
+                                    <option value="3570">59:30</option>
+                                    <option value="3600">60:00</option>
+                                 </select>
                             </fieldset>
                         </div>
                     </div>
@@ -662,62 +828,62 @@ Modified .: 2016-09-29
         <div data-role="page" data-theme="b" class="page-timer-card" id="page-card-green" style="background:#00ff00;">
             <div data-role="main" class="ui-content">
             </div>
-			<div data-role="footer" data-position="fixed" data-fullscreen="true" style="text-align:center;">
-				<div data-role="controlgroup" data-type="horizontal">
-					<a id="btn-prev" href="#page-home" class="ui-btn ui-icon-home ui-btn-icon-left" data-transition="slide" data-direction="reverse">Home</a>
-					<a id="btn-next" href="#page-card-amber" class="ui-btn ui-icon-carat-r ui-btn-icon-right" data-transition="slide">Amber</a>
-				</div>
-			</div>
+            <div data-role="footer" data-position="fixed" data-fullscreen="true" style="text-align:center;">
+                <div data-role="controlgroup" data-type="horizontal">
+                    <a id="btn-prev" href="#page-home" class="ui-btn ui-icon-home ui-btn-icon-left" data-transition="slide" data-direction="reverse">Home</a>
+                    <a id="btn-next" href="#page-card-amber" class="ui-btn ui-icon-carat-r ui-btn-icon-right" data-transition="slide">Amber</a>
+                </div>
+            </div>
         </div>
 
         <!-- Card Amber page -->
         <div data-role="page" data-theme="b" class="page-timer-card" id="page-card-amber" style="background:#ffff00;">
             <div data-role="main" class="ui-content">
             </div>
-			<div data-role="footer" data-position="fixed" data-fullscreen="true" style="text-align:center;">
-				<div data-role="controlgroup" data-type="horizontal">
-					<a id="btn-prev" href="#page-card-green" class="ui-btn ui-icon-carat-l ui-btn-icon-left" data-transition="slide" data-direction="reverse">Green</a>
-					<a id="btn-next" href="#page-card-red" class="ui-btn ui-icon-carat-r ui-btn-icon-right" data-transition="slide">Red</a>
-				</div>
-			</div>
+            <div data-role="footer" data-position="fixed" data-fullscreen="true" style="text-align:center;">
+                <div data-role="controlgroup" data-type="horizontal">
+                    <a id="btn-prev" href="#page-card-green" class="ui-btn ui-icon-carat-l ui-btn-icon-left" data-transition="slide" data-direction="reverse">Green</a>
+                    <a id="btn-next" href="#page-card-red" class="ui-btn ui-icon-carat-r ui-btn-icon-right" data-transition="slide">Red</a>
+                </div>
+            </div>
         </div>
 
         <!-- Card Red page -->
         <div data-role="page" data-theme="b" class="page-timer-card" id="page-card-red" style="background:#ff0000;">
             <div data-role="main" class="ui-content">
             </div>
-			<div data-role="footer" data-position="fixed" data-fullscreen="true" style="text-align:center;">
-				<div data-role="controlgroup" data-type="horizontal">
-					<a id="btn-prev" href="#page-card-amber" class="ui-btn ui-icon-carat-l ui-btn-icon-left" data-transition="slide" data-direction="reverse">Amber</a>
-					<a id="btn-next" href="#page-card-stop" class="ui-btn ui-icon-carat-r ui-btn-icon-right" data-transition="slide">Stop</a>
-				</div>
-			</div>
+            <div data-role="footer" data-position="fixed" data-fullscreen="true" style="text-align:center;">
+                <div data-role="controlgroup" data-type="horizontal">
+                    <a id="btn-prev" href="#page-card-amber" class="ui-btn ui-icon-carat-l ui-btn-icon-left" data-transition="slide" data-direction="reverse">Amber</a>
+                    <a id="btn-next" href="#page-card-stop" class="ui-btn ui-icon-carat-r ui-btn-icon-right" data-transition="slide">Stop</a>
+                </div>
+            </div>
         </div>
 
         <!-- Card Stop page -->
         <div data-role="page" data-theme="b" class="page-timer-card" id="page-card-stop" style="background:red;">
             <div data-role="main" class="ui-content">
-				<div class="STOP">STOP</div>
+                <div class="STOP">STOP</div>
             </div>
-			<div data-role="footer" data-position="fixed" data-fullscreen="true" style="text-align:center;">
-				<div data-role="controlgroup" data-type="horizontal">
-					<a id="btn-prev" href="#page-card-red"  class="ui-btn ui-icon-carat-l ui-btn-icon-left" data-transition="slide" data-direction="reverse">Red</a>
-					<a id="btn-next" href="#page-card-stop-now" class="ui-btn ui-icon-carat-r ui-btn-icon-right" data-transition="slide">Now!</a>
-				</div>
-			</div>
+            <div data-role="footer" data-position="fixed" data-fullscreen="true" style="text-align:center;">
+                <div data-role="controlgroup" data-type="horizontal">
+                    <a id="btn-prev" href="#page-card-red"  class="ui-btn ui-icon-carat-l ui-btn-icon-left" data-transition="slide" data-direction="reverse">Red</a>
+                    <a id="btn-next" href="#page-card-stop-now" class="ui-btn ui-icon-carat-r ui-btn-icon-right" data-transition="slide">Now!</a>
+                </div>
+            </div>
         </div>
 
         <!-- Card Stop Now page -->
         <div data-role="page" data-theme="b" class="page-timer-card" id="page-card-stop-now" style="background:#000000;">
             <div data-role="main" class="ui-content">
-				<div class="STOP">NOW!</div>
+                <div class="STOP">NOW!</div>
             </div>
-			<div data-role="footer" data-position="fixed" data-fullscreen="true" style="text-align:center;">
-				<div data-role="controlgroup" data-type="horizontal">
-					<a id="btn-prev" href="#page-card-stop"  class="ui-btn ui-icon-carat-l ui-btn-icon-left" data-transition="slide" data-direction="reverse">Stop</a>
-					<a id="btn-next" href="#page-home" class="ui-btn ui-icon-home ui-btn-icon-right" data-transition="slide">Home</a>
-				</div>
-			</div>
+            <div data-role="footer" data-position="fixed" data-fullscreen="true" style="text-align:center;">
+                <div data-role="controlgroup" data-type="horizontal">
+                    <a id="btn-prev" href="#page-card-stop"  class="ui-btn ui-icon-carat-l ui-btn-icon-left" data-transition="slide" data-direction="reverse">Stop</a>
+                    <a id="btn-next" href="#page-home" class="ui-btn ui-icon-home ui-btn-icon-right" data-transition="slide">Home</a>
+                </div>
+            </div>
         </div>
     </body>
 </html>
